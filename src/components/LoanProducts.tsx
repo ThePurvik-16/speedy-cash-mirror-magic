@@ -2,6 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CreditCard, Calendar, Car, TrendingUp, DollarSign, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const LoanProducts = () => {
   const products = [
@@ -11,7 +12,8 @@ export const LoanProducts = () => {
       description: "Quick cash advance until your next payday",
       amount: "Up to $1,500",
       features: ["Same day funding", "No credit check", "Online application"],
-      id: "payday"
+      id: "payday",
+      slug: "payday"
     },
     {
       icon: <Calendar className="h-8 w-8 text-orange-500" />,
@@ -19,7 +21,8 @@ export const LoanProducts = () => {
       description: "Flexible repayment terms over multiple months",
       amount: "Up to $5,000",
       features: ["Fixed payments", "Longer terms", "Build credit history"],
-      id: "installment"
+      id: "installment",
+      slug: "installment"
     },
     {
       icon: <Car className="h-8 w-8 text-orange-500" />,
@@ -27,7 +30,8 @@ export const LoanProducts = () => {
       description: "Use your vehicle title as collateral",
       amount: "Up to $10,000",
       features: ["Keep your car", "Fast approval", "Competitive rates"],
-      id: "title"
+      id: "title",
+      slug: "title"
     },
     {
       icon: <TrendingUp className="h-8 w-8 text-orange-500" />,
@@ -35,7 +39,8 @@ export const LoanProducts = () => {
       description: "Revolving credit line for ongoing expenses",
       amount: "Up to $4,000",
       features: ["Pay as you use", "Reusable credit", "Online access"],
-      id: "credit"
+      id: "credit",
+      slug: "credit"
     }
   ];
 
@@ -80,9 +85,16 @@ export const LoanProducts = () => {
                     </li>
                   ))}
                 </ul>
-                <Button className="w-full bg-blue-900 hover:bg-blue-800">
-                  Learn More
-                </Button>
+                <Link to={`/loans/${product.slug}`}>
+                  <Button className="w-full bg-blue-900 hover:bg-blue-800 mb-2">
+                    Learn More
+                  </Button>
+                </Link>
+                <Link to="/apply">
+                  <Button variant="outline" className="w-full border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white">
+                    Apply Now
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
