@@ -12,6 +12,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -171,7 +172,7 @@ const Contact = () => {
                     <Phone className="h-5 w-5 text-blue-900 mt-1" />
                     <div>
                       <h3 className="font-semibold">Phone Support</h3>
-                      <p className="text-gray-600">1-888-SPEEDY-1</p>
+                      <p className="text-gray-600">1-888-ADVANCE-1</p>
                       <p className="text-sm text-gray-500">Available 24/7</p>
                     </div>
                   </div>
@@ -180,7 +181,7 @@ const Contact = () => {
                     <Mail className="h-5 w-5 text-blue-900 mt-1" />
                     <div>
                       <h3 className="font-semibold">Email Support</h3>
-                      <p className="text-gray-600">support@speedycash.com</p>
+                      <p className="text-gray-600">support@advanceamerica.com</p>
                       <p className="text-sm text-gray-500">Response within 24 hours</p>
                     </div>
                   </div>
@@ -190,9 +191,11 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold">Store Locations</h3>
                       <p className="text-gray-600">1,000+ locations nationwide</p>
-                      <Button variant="link" className="p-0 h-auto text-blue-900">
-                        Find a store near you
-                      </Button>
+                      <Link to="/store-locator">
+                        <Button variant="link" className="p-0 h-auto text-blue-900">
+                          Find a store near you
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                   

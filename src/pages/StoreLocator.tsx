@@ -16,7 +16,7 @@ const StoreLocator = () => {
   const stores = [
     {
       id: 1,
-      name: "SpeedyCash - Downtown",
+      name: "Advance America - Downtown",
       address: "123 Main Street, New York, NY 10001",
       phone: "(555) 123-4567",
       hours: {
@@ -29,7 +29,7 @@ const StoreLocator = () => {
     },
     {
       id: 2,
-      name: "SpeedyCash - Midtown",
+      name: "Advance America - Midtown",
       address: "456 Broadway, New York, NY 10013",
       phone: "(555) 234-5678",
       hours: {
@@ -42,7 +42,7 @@ const StoreLocator = () => {
     },
     {
       id: 3,
-      name: "SpeedyCash - Brooklyn",
+      name: "Advance America - Brooklyn",
       address: "789 Atlantic Avenue, Brooklyn, NY 11238",
       phone: "(555) 345-6789",
       hours: {
@@ -55,7 +55,7 @@ const StoreLocator = () => {
     },
     {
       id: 4,
-      name: "SpeedyCash - Queens",
+      name: "Advance America - Queens",
       address: "321 Northern Boulevard, Queens, NY 11101",
       phone: "(555) 456-7890",
       hours: {

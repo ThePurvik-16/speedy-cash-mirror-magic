@@ -33,7 +33,7 @@ export const Header = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center">
               <Phone className="h-4 w-4 mr-1" />
-              <span>1-888-SPEEDY-1</span>
+              <span>1-888-ADVANCE-1</span>
             </div>
             <div className="flex items-center">
               <MapPin className="h-4 w-4 mr-1" />
@@ -54,7 +54,7 @@ export const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="text-2xl font-bold text-blue-900">
-              Speedy<span className="text-orange-500">Cash</span>
+              Advance<span className="text-orange-500">America</span>
             </Link>
           </div>
 

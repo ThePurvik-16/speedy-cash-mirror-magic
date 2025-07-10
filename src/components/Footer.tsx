@@ -1,6 +1,7 @@
 
 import { Facebook, Twitter, Instagram, Youtube, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const loanProducts = [
@@ -47,7 +48,7 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="text-2xl font-bold mb-4">
-              Speedy<span className="text-orange-400">Cash</span>
+              Advance<span className="text-orange-400">America</span>
             </div>
             <p className="text-blue-100 mb-6 leading-relaxed">
               Providing fast, reliable financial solutions for over 20 years. 
@@ -65,13 +66,12 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Loan Products</h4>
             <ul className="space-y-2">
-              {loanProducts.map((product) => (
-                <li key={product}>
-                  <a href="#" className="text-blue-100 hover:text-white transition-colors">
-                    {product}
-                  </a>
-                </li>
-              ))}
+              <li><Link to="/loans/payday" className="text-blue-100 hover:text-white transition-colors">Payday Loans</Link></li>
+              <li><Link to="/loans/installment" className="text-blue-100 hover:text-white transition-colors">Installment Loans</Link></li>
+              <li><Link to="/loans/title" className="text-blue-100 hover:text-white transition-colors">Title Loans</Link></li>
+              <li><Link to="/loans/credit" className="text-blue-100 hover:text-white transition-colors">Line of Credit</Link></li>
+              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Check Cashing</Link></li>
+              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Money Orders</Link></li>
             </ul>
           </div>
 
@@ -79,13 +79,12 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Company</h4>
             <ul className="space-y-2">
-              {company.map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-blue-100 hover:text-white transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li><Link to="/about" className="text-blue-100 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Careers</Link></li>
+              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Press</Link></li>
+              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Investor Relations</Link></li>
+              <li><Link to="/store-locator" className="text-blue-100 hover:text-white transition-colors">Store Locations</Link></li>
+              <li><Link to="/contact" className="text-blue-100 hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -93,13 +92,12 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Support</h4>
             <ul className="space-y-2">
-              {support.map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-blue-100 hover:text-white transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li><Link to="/contact" className="text-blue-100 hover:text-white transition-colors">Customer Service</Link></li>
+              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">FAQs</Link></li>
+              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Payment Options</Link></li>
+              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Account Management</Link></li>
+              <li><Link to="/contact" className="text-blue-100 hover:text-white transition-colors">Report a Problem</Link></li>
+              <li><Link to="/contact" className="text-blue-100 hover:text-white transition-colors">Feedback</Link></li>
             </ul>
           </div>
 
@@ -107,13 +105,12 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Legal</h4>
             <ul className="space-y-2">
-              {legal.map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-blue-100 hover:text-white transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Terms of Service</Link></li>
+              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">State Disclosures</Link></li>
+              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Responsible Lending</Link></li>
+              <li><Link to="/contact" className="text-blue-100 hover:text-white transition-colors">Complaints Process</Link></li>
+              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Accessibility</Link></li>
             </ul>
           </div>
         </div>
@@ -125,14 +122,14 @@ export const Footer = () => {
               <Phone className="h-5 w-5 mr-3 text-orange-400" />
               <div>
                 <div className="font-semibold">Customer Service</div>
-                <div className="text-blue-100">1-888-SPEEDY-1</div>
+                <div className="text-blue-100">1-888-ADVANCE-1</div>
               </div>
             </div>
             <div className="flex items-center">
               <Mail className="h-5 w-5 mr-3 text-orange-400" />
               <div>
                 <div className="font-semibold">Email Support</div>
-                <div className="text-blue-100">support@speedycash.com</div>
+                <div className="text-blue-100">support@advanceamerica.com</div>
               </div>
             </div>
             <div className="flex items-center">
@@ -171,7 +168,7 @@ export const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-blue-100 text-sm mb-4 md:mb-0">
-              © 2024 SpeedyCash. All rights reserved. Licensed by the Department of Financial Protection and Innovation.
+              © 2024 Advance America. All rights reserved. Licensed by the Department of Financial Protection and Innovation.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-blue-100 hover:text-white transition-colors">Privacy</a>

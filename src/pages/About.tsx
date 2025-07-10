@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Award, Users, MapPin, TrendingUp, Shield, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   const stats = [
@@ -40,7 +41,7 @@ const About = () => {
     {
       name: "John Smith",
       position: "Chief Executive Officer",
-      bio: "John has over 20 years of experience in financial services and has led SpeedyCash's expansion nationwide.",
+      bio: "John has over 20 years of experience in financial services and has led Advance America's expansion nationwide.",
       image: "/placeholder.svg"
     },
     {
@@ -72,15 +73,17 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              About SpeedyCash
+              About Advance America
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-blue-100">
               For over 20 years, we've been helping Americans access the financial services they need, 
               when they need them most.
             </p>
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
-              Start Your Application
-            </Button>
+            <Link to="/apply">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+                Start Your Application
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -123,7 +126,7 @@ const About = () => {
                   Founded with Purpose
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  SpeedyCash was founded in 1997 with a simple mission: to provide fast, reliable financial 
+                  Advance America was founded in 1997 with a simple mission: to provide fast, reliable financial 
                   services to hardworking Americans who need quick access to cash. We recognized that traditional 
                   banks often couldn't meet the urgent financial needs of everyday people.
                 </p>
@@ -229,16 +232,20 @@ const About = () => {
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
             Ready to Get Started?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
-            Join over one million customers who trust SpeedyCash for their financial needs.
-          </p>
+            <p className="text-xl mb-8 text-blue-100">
+              Join over one million customers who trust Advance America for their financial needs.
+            </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600">
-              Apply Now
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900">
-              Find a Store
-            </Button>
+            <Link to="/apply">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600">
+                Apply Now
+              </Button>
+            </Link>
+            <Link to="/store-locator">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900">
+                Find a Store
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
