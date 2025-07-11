@@ -1,12 +1,21 @@
 
+import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { PageLoader } from "@/components/ui/loader";
 import { Award, Users, MapPin, TrendingUp, Shield, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
+
   const stats = [
     { number: "20+", label: "Years in Business", icon: <Award className="h-8 w-8 text-orange-500" /> },
     { number: "1M+", label: "Customers Served", icon: <Users className="h-8 w-8 text-orange-500" /> },
@@ -64,6 +73,8 @@ const About = () => {
     },
   ];
 
+  if (loading) return <PageLoader />;
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -71,7 +82,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-16 lg:py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               About Advance America
             </h1>
@@ -93,7 +104,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <Card key={index} className="text-center p-6 border-0 shadow-md">
+              <Card key={index} className={`text-center p-6 border-0 shadow-md hover-lift animate-scale-in animate-stagger-${index + 1}`}>
                 <CardContent className="p-0">
                   <div className="flex justify-center mb-4">
                     {stat.icon}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -9,6 +9,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { PageLoader } from "@/components/ui/loader";
 import { toast } from "@/hooks/use-toast";
 import { DollarSign, Shield, Clock } from "lucide-react";
 
@@ -31,6 +32,12 @@ type ApplicationForm = z.infer<typeof applicationSchema>;
 
 const Apply = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
 
   const form = useForm<ApplicationForm>({
     resolver: zodResolver(applicationSchema),
@@ -64,13 +71,15 @@ const Apply = () => {
     setIsSubmitting(false);
   };
 
+  if (loading) return <PageLoader />;
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
       
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 animate-fade-in">
             <h1 className="text-3xl lg:text-4xl font-bold text-blue-900 mb-4">
               Apply for Your Loan
             </h1>
@@ -81,24 +90,24 @@ const Apply = () => {
 
           {/* Benefits Section */}
           <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm border">
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm border hover-lift animate-scale-in animate-stagger-1">
               <Clock className="h-12 w-12 mx-auto mb-4 text-blue-900" />
               <h3 className="font-semibold text-lg mb-2">Fast Approval</h3>
               <p className="text-gray-600">Get approved in minutes, not days</p>
             </div>
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm border">
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm border hover-lift animate-scale-in animate-stagger-2">
               <DollarSign className="h-12 w-12 mx-auto mb-4 text-blue-900" />
               <h3 className="font-semibold text-lg mb-2">Up to $5,000</h3>
               <p className="text-gray-600">Borrow what you need, when you need it</p>
             </div>
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm border">
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm border hover-lift animate-scale-in animate-stagger-3">
               <Shield className="h-12 w-12 mx-auto mb-4 text-blue-900" />
               <h3 className="font-semibold text-lg mb-2">Secure & Safe</h3>
               <p className="text-gray-600">Your information is protected with bank-level security</p>
             </div>
           </div>
 
-          <Card>
+          <Card className="animate-slide-up">
             <CardHeader>
               <CardTitle>Loan Application</CardTitle>
               <CardDescription>

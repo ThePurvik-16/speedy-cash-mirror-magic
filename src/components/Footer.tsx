@@ -1,5 +1,5 @@
 
-import { Facebook, Twitter, Instagram, Youtube, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -54,12 +54,6 @@ export const Footer = () => {
               Providing fast, reliable financial solutions for over 20 years. 
               Your trusted partner for quick cash when you need it most.
             </p>
-            <div className="flex space-x-4">
-              <Facebook className="h-6 w-6 text-blue-300 hover:text-white cursor-pointer transition-colors" />
-              <Twitter className="h-6 w-6 text-blue-300 hover:text-white cursor-pointer transition-colors" />
-              <Instagram className="h-6 w-6 text-blue-300 hover:text-white cursor-pointer transition-colors" />
-              <Youtube className="h-6 w-6 text-blue-300 hover:text-white cursor-pointer transition-colors" />
-            </div>
           </div>
 
           {/* Loan Products */}
@@ -83,7 +77,7 @@ export const Footer = () => {
               <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Careers</Link></li>
               <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Press</Link></li>
               <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Investor Relations</Link></li>
-              <li><Link to="/store-locator" className="text-blue-100 hover:text-white transition-colors">Store Locations</Link></li>
+              <li><Link to="/about" className="text-blue-100 hover:text-white transition-colors">Locations</Link></li>
               <li><Link to="/contact" className="text-blue-100 hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
@@ -92,12 +86,12 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Support</h4>
             <ul className="space-y-2">
-              <li><Link to="/contact" className="text-blue-100 hover:text-white transition-colors">Customer Service</Link></li>
-              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">FAQs</Link></li>
-              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Payment Options</Link></li>
-              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Account Management</Link></li>
-              <li><Link to="/contact" className="text-blue-100 hover:text-white transition-colors">Report a Problem</Link></li>
-              <li><Link to="/contact" className="text-blue-100 hover:text-white transition-colors">Feedback</Link></li>
+              <li><Link to="/support" className="text-blue-100 hover:text-white transition-colors">Customer Service</Link></li>
+              <li><Link to="/support" className="text-blue-100 hover:text-white transition-colors">FAQs</Link></li>
+              <li><Link to="/support" className="text-blue-100 hover:text-white transition-colors">Payment Options</Link></li>
+              <li><Link to="/support" className="text-blue-100 hover:text-white transition-colors">Account Management</Link></li>
+              <li><Link to="/support" className="text-blue-100 hover:text-white transition-colors">Report a Problem</Link></li>
+              <li><Link to="/support" className="text-blue-100 hover:text-white transition-colors">Feedback</Link></li>
             </ul>
           </div>
 
@@ -105,19 +99,19 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Legal</h4>
             <ul className="space-y-2">
-              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Terms of Service</Link></li>
-              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">State Disclosures</Link></li>
-              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Responsible Lending</Link></li>
-              <li><Link to="/contact" className="text-blue-100 hover:text-white transition-colors">Complaints Process</Link></li>
-              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Accessibility</Link></li>
+              <li><Link to="/legal" className="text-blue-100 hover:text-white transition-colors">Terms of Service</Link></li>
+              <li><Link to="/legal" className="text-blue-100 hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/legal" className="text-blue-100 hover:text-white transition-colors">State Disclosures</Link></li>
+              <li><Link to="/legal" className="text-blue-100 hover:text-white transition-colors">Responsible Lending</Link></li>
+              <li><Link to="/legal" className="text-blue-100 hover:text-white transition-colors">Complaints Process</Link></li>
+              <li><Link to="/legal" className="text-blue-100 hover:text-white transition-colors">Accessibility</Link></li>
             </ul>
           </div>
         </div>
 
         {/* Contact Info */}
         <div className="border-t border-blue-800 mt-12 pt-8">
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             <div className="flex items-center">
               <Phone className="h-5 w-5 mr-3 text-orange-400" />
               <div>
@@ -130,13 +124,6 @@ export const Footer = () => {
               <div>
                 <div className="font-semibold">Email Support</div>
                 <div className="text-blue-100">support@advanceamerica.com</div>
-              </div>
-            </div>
-            <div className="flex items-center">
-              <MapPin className="h-5 w-5 mr-3 text-orange-400" />
-              <div>
-                <div className="font-semibold">Store Locator</div>
-                <div className="text-blue-100">Find a location near you</div>
               </div>
             </div>
           </div>
@@ -171,9 +158,9 @@ export const Footer = () => {
               © 2024 Advance America. All rights reserved. Licensed by the Department of Financial Protection and Innovation.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-blue-100 hover:text-white transition-colors">Privacy</a>
-              <a href="#" className="text-blue-100 hover:text-white transition-colors">Terms</a>
-              <a href="#" className="text-blue-100 hover:text-white transition-colors">Sitemap</a>
+              <Link to="/legal" className="text-blue-100 hover:text-white transition-colors">Privacy</Link>
+              <Link to="/legal" className="text-blue-100 hover:text-white transition-colors">Terms</Link>
+              <Link to="/contact" className="text-blue-100 hover:text-white transition-colors">Contact</Link>
             </div>
           </div>
           <div className="mt-4 text-xs text-blue-200 leading-relaxed">

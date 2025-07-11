@@ -1,16 +1,23 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { PageLoader } from "@/components/ui/loader";
 import { MapPin, Phone, Clock, Navigation, Search } from "lucide-react";
 
 const StoreLocator = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedStore, setSelectedStore] = useState<number | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Mock store data
   const stores = [
@@ -72,13 +79,15 @@ const StoreLocator = () => {
     console.log("Searching for stores near:", searchQuery);
   };
 
+  if (loading) return <PageLoader />;
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
       
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 animate-fade-in">
             <h1 className="text-3xl lg:text-4xl font-bold text-blue-900 mb-4">
               Find a Store Near You
             </h1>
@@ -88,7 +97,7 @@ const StoreLocator = () => {
           </div>
 
           {/* Search Section */}
-          <Card className="mb-8">
+          <Card className="mb-8 animate-slide-up">
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Search className="h-5 w-5 mr-2" />

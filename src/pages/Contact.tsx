@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { PageLoader } from "@/components/ui/loader";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
 import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
@@ -26,6 +27,12 @@ type ContactForm = z.infer<typeof contactSchema>;
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
+  }, []);
 
   const form = useForm<ContactForm>({
     resolver: zodResolver(contactSchema),
@@ -52,6 +59,8 @@ const Contact = () => {
     form.reset();
     setIsSubmitting(false);
   };
+
+  if (loading) return <PageLoader />;
 
   return (
     <div className="min-h-screen bg-gray-50">

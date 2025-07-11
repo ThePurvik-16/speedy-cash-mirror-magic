@@ -43,7 +43,7 @@ export const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div>
+          <div className="animate-fade-in">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
               Get Cash
               <br />
@@ -54,34 +54,34 @@ export const Hero = () => {
               No hidden fees, quick approval, and funds as soon as today.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-slide-up">
               <Link to="/apply">
-                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold">
+                <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold hover-glow">
                   Apply Online Now
                 </Button>
               </Link>
-              <Link to="/store-locator">
+              <Link to="/about">
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg">
-                  Find a Store
+                  Learn More
                 </Button>
               </Link>
             </div>
 
             {/* Key Features */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="flex items-center">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 animate-scale-in">
+              <div className="flex items-center animate-stagger-1">
                 <Clock className="h-5 w-5 mr-2 text-orange-400" />
                 <span className="text-sm">Fast Approval</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center animate-stagger-2">
                 <DollarSign className="h-5 w-5 mr-2 text-orange-400" />
                 <span className="text-sm">Up to $5,000</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center animate-stagger-3">
                 <Shield className="h-5 w-5 mr-2 text-orange-400" />
                 <span className="text-sm">Secure Process</span>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center animate-stagger-4">
                 <CheckCircle className="h-5 w-5 mr-2 text-orange-400" />
                 <span className="text-sm">Easy Approval</span>
               </div>
@@ -89,8 +89,8 @@ export const Hero = () => {
           </div>
 
           {/* Right Content - Application Form */}
-          <div>
-            <Card className="p-8 bg-white text-gray-800">
+          <div className="animate-scale-in">
+            <Card className="p-8 bg-white text-gray-800 hover-lift">
               <h3 className="text-2xl font-bold mb-6 text-center text-blue-900">
                 Get Started in Minutes
               </h3>
