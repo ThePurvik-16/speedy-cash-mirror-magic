@@ -57,6 +57,38 @@ const Apply = () => {
     },
   });
 
+  useEffect(() => {
+    // Load saved form data from sessionStorage
+    const savedData = sessionStorage.getItem('heroFormData');
+    if (savedData) {
+      try {
+        const parsedData = JSON.parse(savedData);
+        let loanAmount = '';
+        
+        // Handle different loan amount formats
+        if (parsedData.loanAmount === 'custom' && parsedData.customAmount) {
+          loanAmount = `$${parsedData.customAmount}`;
+        } else if (parsedData.loanAmount && parsedData.loanAmount !== 'custom') {
+          // Convert range to display format
+          const ranges = {
+            '5000-10000': '$5,000 - $10,000',
+            '10000-25000': '$10,000 - $25,000',
+            '25000-50000': '$25,000 - $50,000',
+            '50000-100000': '$50,000 - $100,000',
+            '100000+': '$100,000+'
+          };
+          loanAmount = ranges[parsedData.loanAmount as keyof typeof ranges] || parsedData.loanAmount;
+        }
+        
+        if (loanAmount) {
+          form.setValue('loanAmount', loanAmount);
+        }
+      } catch (error) {
+        console.error('Error parsing saved form data:', error);
+      }
+    }
+  }, [form]);
+
   const onSubmit = async (data: ApplicationForm) => {
     setIsSubmitting(true);
     // Simulate API call
