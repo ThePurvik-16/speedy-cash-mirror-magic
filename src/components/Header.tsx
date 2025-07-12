@@ -35,12 +35,6 @@ export const Header = () => {
               <Phone className="h-4 w-4 mr-1" />
               <span>1-888-ADVANCE-1</span>
             </div>
-            <div className="flex items-center">
-              <MapPin className="h-4 w-4 mr-1" />
-              <Link to="/store-locator" className="hover:underline">
-                Find a Store
-              </Link>
-            </div>
           </div>
           <div className="hidden md:block">
             <span>Get Started Today - Fast & Easy Application</span>

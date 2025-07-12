@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { PageLoader } from "@/components/ui/loader";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { Phone, Mail, MessageCircle, FileText, CreditCard, Shield } from "lucide-react";
 
 export default function Support() {
@@ -61,6 +63,7 @@ export default function Support() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Header />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
         <div className="container mx-auto px-4 text-center animate-fade-in">
@@ -141,6 +144,8 @@ export default function Support() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 }

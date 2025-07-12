@@ -136,16 +136,28 @@ export const Footer = () => {
             <p className="text-blue-100 mb-4">
               Get tips on managing your finances and be the first to know about special offers.
             </p>
-            <div className="flex gap-4">
+            <form onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const email = formData.get('email') as string;
+              if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+              }
+              alert('Thank you for subscribing!');
+              e.currentTarget.reset();
+            }} className="flex gap-4">
               <input
+                name="email"
                 type="email"
                 placeholder="Enter your email address"
                 className="flex-1 px-4 py-2 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-400"
+                required
               />
-              <Button className="bg-orange-500 hover:bg-orange-600 px-6">
+              <Button type="submit" className="bg-orange-500 hover:bg-orange-600 px-6">
                 Subscribe
               </Button>
-            </div>
+            </form>
           </div>
         </div>
       </div>

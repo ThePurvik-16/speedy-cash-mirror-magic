@@ -1,5 +1,5 @@
 
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -182,9 +182,11 @@ const LoanDetails = () => {
                 <div className="text-gray-600">Maximum Amount</div>
               </div>
             </div>
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3">
-              Apply Now
-            </Button>
+            <Link to="/apply">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3">
+                Apply Now
+              </Button>
+            </Link>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
@@ -302,12 +304,11 @@ const LoanDetails = () => {
                   <p className="text-gray-600 mb-4">
                     Get started with your application today. The process is quick and easy.
                   </p>
-                  <Button className="w-full bg-orange-500 hover:bg-orange-600 mb-2">
-                    Apply Online
-                  </Button>
-                  <Button variant="outline" className="w-full">
-                    Find a Store
-                  </Button>
+                  <Link to="/apply">
+                    <Button className="w-full bg-orange-500 hover:bg-orange-600 mb-2">
+                      Apply Online
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
 
@@ -322,10 +323,10 @@ const LoanDetails = () => {
                   </p>
                   <div className="space-y-2">
                     <div className="text-sm">
-                      <span className="font-medium">Phone:</span> 1-888-SPEEDY-1
+                      <span className="font-medium">Phone:</span> 1-888-ADVANCE-1
                     </div>
                     <div className="text-sm">
-                      <span className="font-medium">Email:</span> support@speedycash.com
+                      <span className="font-medium">Email:</span> support@advanceamerica.com
                     </div>
                   </div>
                 </CardContent>

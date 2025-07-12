@@ -252,11 +252,6 @@ const About = () => {
                 Apply Now
               </Button>
             </Link>
-            <Link to="/store-locator">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900">
-                Find a Store
-              </Button>
-            </Link>
           </div>
         </div>
       </section>

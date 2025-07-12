@@ -103,9 +103,15 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fix for scroll position when navigating */
+.page-navigation {
+  scroll-margin-top: 0;
+  position: relative;
+}
 }
 
 @layer utilities {

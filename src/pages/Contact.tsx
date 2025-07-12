@@ -195,18 +195,6 @@ const Contact = () => {
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-3">
-                    <MapPin className="h-5 w-5 text-blue-900 mt-1" />
-                    <div>
-                      <h3 className="font-semibold">Store Locations</h3>
-                      <p className="text-gray-600">1,000+ locations nationwide</p>
-                      <Link to="/store-locator">
-                        <Button variant="link" className="p-0 h-auto text-blue-900">
-                          Find a store near you
-                        </Button>
-                      </Link>
-                    </div>
-                  </div>
                   
                   <div className="flex items-start space-x-3">
                     <Clock className="h-5 w-5 text-blue-900 mt-1" />
@@ -241,9 +229,11 @@ const Contact = () => {
                       <p className="text-sm text-gray-600">Valid ID, proof of income, and an active checking account.</p>
                     </div>
                   </div>
-                  <Button variant="link" className="p-0 mt-4 text-blue-900">
-                    View all FAQs
-                  </Button>
+                  <Link to="/support">
+                    <Button variant="link" className="p-0 mt-4 text-blue-900">
+                      View all FAQs
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </div>

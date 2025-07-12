@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { PageLoader } from "@/components/ui/loader";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { FileText, Shield, Scale, AlertTriangle, Eye, Users } from "lucide-react";
 
 export default function Legal() {
@@ -48,6 +50,7 @@ export default function Legal() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Header />
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-slate-800 to-slate-900 text-white py-20">
         <div className="container mx-auto px-4 text-center animate-fade-in">
@@ -138,6 +141,8 @@ export default function Legal() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 }
