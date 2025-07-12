@@ -9,6 +9,7 @@ import { toast } from "@/hooks/use-toast";
 export const Hero = () => {
   const [formData, setFormData] = useState({
     loanAmount: "",
+    customAmount: "",
     state: "",
     zipCode: "",
   });
@@ -21,6 +22,15 @@ export const Hero = () => {
       toast({
         title: "Please fill out all fields",
         description: "All fields are required to get started.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (formData.loanAmount === "custom" && !formData.customAmount) {
+      toast({
+        title: "Please enter custom amount",
+        description: "Custom loan amount is required.",
         variant: "destructive",
       });
       return;
@@ -105,11 +115,27 @@ export const Hero = () => {
                     required
                   >
                     <option value="">Select Amount</option>
-                    <option value="100-500">$100 - $500</option>
-                    <option value="500-1000">$500 - $1,000</option>
-                    <option value="1000-2500">$1,000 - $2,500</option>
-                    <option value="2500-5000">$2,500 - $5,000</option>
+                    <option value="5000-10000">$5,000 - $10,000</option>
+                    <option value="10000-25000">$10,000 - $25,000</option>
+                    <option value="25000-50000">$25,000 - $50,000</option>
+                    <option value="50000-100000">$50,000 - $100,000</option>
+                    <option value="100000+">$100,000+</option>
+                    <option value="custom">Custom Amount</option>
                   </select>
+                  {formData.loanAmount === "custom" && (
+                    <div className="mt-3">
+                      <input
+                        type="number"
+                        name="customAmount"
+                        value={formData.customAmount}
+                        onChange={handleChange}
+                        placeholder="Enter your desired amount"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        min="1"
+                        required
+                      />
+                    </div>
+                  )}
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Your State</label>
