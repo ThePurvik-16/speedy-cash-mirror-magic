@@ -60,13 +60,11 @@ export const Hero = () => {
                   Apply Online Now
                 </Button>
               </Link>
-              <div className="group relative">
-                <Link to="/about">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg opacity-100 group-hover:opacity-100 transition-opacity">
-                    Learn More
-                  </Button>
-                </Link>
-              </div>
+              <Link to="/about">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg font-semibold">
+                  Learn More
+                </Button>
+              </Link>
             </div>
 
             {/* Key Features */}

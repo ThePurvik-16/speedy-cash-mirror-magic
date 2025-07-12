@@ -15,10 +15,6 @@ export const Footer = () => {
 
   const company = [
     "About Us",
-    "Careers",
-    "Press",
-    "Investor Relations",
-    "Store Locations",
     "Contact Us"
   ];
 
@@ -74,10 +70,6 @@ export const Footer = () => {
             <h4 className="font-bold text-lg mb-4">Company</h4>
             <ul className="space-y-2">
               <li><Link to="/about" className="text-blue-100 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Careers</Link></li>
-              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Press</Link></li>
-              <li><Link to="#" className="text-blue-100 hover:text-white transition-colors">Investor Relations</Link></li>
-              <li><Link to="/about" className="text-blue-100 hover:text-white transition-colors">Locations</Link></li>
               <li><Link to="/contact" className="text-blue-100 hover:text-white transition-colors">Contact Us</Link></li>
             </ul>
           </div>
