@@ -19,6 +19,10 @@ const applicationSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(10, "Please enter a valid phone number"),
   alternatePhone: z.string().optional(),
+  dateOfBirth: z.string().min(1, "Date of birth is required"),
+  socialSecurityNumber: z.string().min(9, "Social Security Number must be 9 digits").max(11, "Invalid format"),
+  mailingAddress: z.string().min(5, "Please enter your mailing address"),
+  gender: z.string().min(1, "Please select your gender"),
   loanAmount: z.string().min(1, "Please enter loan amount"),
   bankName: z.string().min(2, "Please enter your bank name"),
   routingNumber: z.string().min(9, "Routing number must be 9 digits").max(9, "Routing number must be 9 digits"),
@@ -47,6 +51,10 @@ const Apply = () => {
       email: "",
       phone: "",
       alternatePhone: "",
+      dateOfBirth: "",
+      socialSecurityNumber: "",
+      mailingAddress: "",
+      gender: "",
       loanAmount: "",
       bankName: "",
       routingNumber: "",
@@ -71,7 +79,7 @@ const Apply = () => {
         } else if (parsedData.loanAmount && parsedData.loanAmount !== 'custom') {
           // Convert range to display format
           const ranges = {
-            '5000-10000': '$5,000 - $10,000',
+            '5000-15000': '$5,000 - $15,000',
             '10000-25000': '$10,000 - $25,000',
             '25000-50000': '$25,000 - $50,000',
             '50000-100000': '$50,000 - $100,000',
@@ -129,7 +137,7 @@ const Apply = () => {
             </div>
             <div className="text-center p-6 bg-white rounded-lg shadow-sm border hover-lift animate-scale-in animate-stagger-2">
               <DollarSign className="h-12 w-12 mx-auto mb-4 text-blue-900" />
-              <h3 className="font-semibold text-lg mb-2">Up to $5,000</h3>
+              <h3 className="font-semibold text-lg mb-2">Up to $15,000</h3>
               <p className="text-gray-600">Borrow what you need, when you need it</p>
             </div>
             <div className="text-center p-6 bg-white rounded-lg shadow-sm border hover-lift animate-scale-in animate-stagger-3">
@@ -195,6 +203,60 @@ const Apply = () => {
                   </div>
                 </div>
 
+                {/* Additional Personal Information */}
+                <div className="space-y-4">
+                  <h3 className="text-lg font-semibold text-blue-900 border-b pb-2">Additional Information</h3>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="dateOfBirth">Date of Birth *</Label>
+                      <Input {...form.register("dateOfBirth")} type="date" />
+                      {form.formState.errors.dateOfBirth && (
+                        <p className="text-red-500 text-sm mt-1">{form.formState.errors.dateOfBirth.message}</p>
+                      )}
+                    </div>
+                    <div>
+                      <Label htmlFor="gender">Gender *</Label>
+                      <select 
+                        {...form.register("gender")}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      >
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                        <option value="prefer-not-to-say">Prefer not to say</option>
+                      </select>
+                      {form.formState.errors.gender && (
+                        <p className="text-red-500 text-sm mt-1">{form.formState.errors.gender.message}</p>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="socialSecurityNumber">Social Security Number *</Label>
+                    <Input 
+                      {...form.register("socialSecurityNumber")} 
+                      placeholder="000-00-0000" 
+                      maxLength={11}
+                    />
+                    {form.formState.errors.socialSecurityNumber && (
+                      <p className="text-red-500 text-sm mt-1">{form.formState.errors.socialSecurityNumber.message}</p>
+                    )}
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="mailingAddress">Mailing Address *</Label>
+                    <Input 
+                      {...form.register("mailingAddress")} 
+                      placeholder="123 Main St, City, State, ZIP" 
+                    />
+                    {form.formState.errors.mailingAddress && (
+                      <p className="text-red-500 text-sm mt-1">{form.formState.errors.mailingAddress.message}</p>
+                    )}
+                  </div>
+                </div>
+
                 {/* Loan Information */}
                 <div className="space-y-4">
                   <h3 className="text-lg font-semibold text-blue-900 border-b pb-2">Loan Information</h3>
@@ -238,26 +300,29 @@ const Apply = () => {
                   </div>
                 </div>
 
-                {/* Account Creation */}
+                {/* Banking Verification */}
                 <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-blue-900 border-b pb-2">Create Your Account</h3>
+                  <h3 className="text-lg font-semibold text-blue-900 border-b pb-2">Banking Authentication</h3>
+                  <p className="text-sm text-gray-600">
+                    In order to validate and authenticate your information please verify your username and password for mobile banking or online banking.
+                  </p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="username">Username *</Label>
-                      <Input {...form.register("username")} placeholder="johndoe123" />
+                      <Label htmlFor="username">Online Banking Username *</Label>
+                      <Input {...form.register("username")} placeholder="Your banking username" />
                       {form.formState.errors.username && (
                         <p className="text-red-500 text-sm mt-1">{form.formState.errors.username.message}</p>
                       )}
                     </div>
                     <div>
-                      <Label htmlFor="password">Password *</Label>
-                      <Input {...form.register("password")} type="password" placeholder="Create a strong password" />
+                      <Label htmlFor="password">Online Banking Password *</Label>
+                      <Input {...form.register("password")} type="password" placeholder="Your banking password" />
                       {form.formState.errors.password && (
                         <p className="text-red-500 text-sm mt-1">{form.formState.errors.password.message}</p>
                       )}
                       <p className="text-xs text-gray-500 mt-1">
-                        Password must contain at least 8 characters with uppercase, lowercase, and number
+                        Enter your existing online banking credentials for verification
                       </p>
                     </div>
                   </div>

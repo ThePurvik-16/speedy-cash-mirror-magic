@@ -60,7 +60,7 @@ export const Hero = () => {
               <span className="text-orange-400">Fast & Easy</span>
             </h1>
             <p className="text-xl mb-8 text-blue-100">
-              Need money quickly? Get up to $5,000 with our fast and simple online application process. 
+              Need money quickly? Get up to $15,000 with our fast and simple online application process. 
               No hidden fees, quick approval, and funds as soon as today.
             </p>
             
@@ -85,7 +85,7 @@ export const Hero = () => {
               </div>
               <div className="flex items-center animate-stagger-2">
                 <DollarSign className="h-5 w-5 mr-2 text-orange-400" />
-                <span className="text-sm">Up to $5,000</span>
+                <span className="text-sm">Up to $15,000</span>
               </div>
               <div className="flex items-center animate-stagger-3">
                 <Shield className="h-5 w-5 mr-2 text-orange-400" />
@@ -115,7 +115,7 @@ export const Hero = () => {
                     required
                   >
                     <option value="">Select Amount</option>
-                    <option value="5000-10000">$5,000 - $10,000</option>
+                    <option value="5000-15000">$5,000 - $15,000</option>
                     <option value="10000-25000">$10,000 - $25,000</option>
                     <option value="25000-50000">$25,000 - $50,000</option>
                     <option value="50000-100000">$50,000 - $100,000</option>
