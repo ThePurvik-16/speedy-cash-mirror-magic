@@ -108,7 +108,7 @@ export const Footer = () => {
               <Phone className="h-5 w-5 mr-3 text-orange-400" />
               <div>
                 <div className="font-semibold">Customer Service</div>
-                <div className="text-blue-100">1-888-ADVANCE-1</div>
+                <div className="text-blue-100">200 west Jackson BLWD Chicago Illinois 60606</div>
               </div>
             </div>
             <div className="flex items-center">

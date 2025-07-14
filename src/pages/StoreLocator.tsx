@@ -25,7 +25,7 @@ const StoreLocator = () => {
       id: 1,
       name: "Advance America - Downtown",
       address: "200 west Jackson BLWD Chicago Illinois 60606",
-      phone: "(555) 123-4567",
+      phone: "200 west Jackson BLWD Chicago Illinois 60606",
       hours: {
         weekdays: "8:00 AM - 8:00 PM",
         saturday: "9:00 AM - 6:00 PM",
@@ -38,7 +38,7 @@ const StoreLocator = () => {
       id: 2,
       name: "Advance America - Midtown",
       address: "200 west Jackson BLWD Chicago Illinois 60606",
-      phone: "(555) 234-5678",
+      phone: "200 west Jackson BLWD Chicago Illinois 60606",
       hours: {
         weekdays: "8:00 AM - 8:00 PM",
         saturday: "9:00 AM - 6:00 PM",
@@ -51,7 +51,7 @@ const StoreLocator = () => {
       id: 3,
       name: "Advance America - Brooklyn",
       address: "200 west Jackson BLWD Chicago Illinois 60606",
-      phone: "(555) 345-6789",
+      phone: "200 west Jackson BLWD Chicago Illinois 60606",
       hours: {
         weekdays: "8:00 AM - 8:00 PM",
         saturday: "9:00 AM - 6:00 PM",
@@ -64,7 +64,7 @@ const StoreLocator = () => {
       id: 4,
       name: "Advance America - Queens",
       address: "200 west Jackson BLWD Chicago Illinois 60606",
-      phone: "(555) 456-7890",
+      phone: "200 west Jackson BLWD Chicago Illinois 60606",
       hours: {
         weekdays: "9:00 AM - 7:00 PM",
         saturday: "9:00 AM - 5:00 PM",

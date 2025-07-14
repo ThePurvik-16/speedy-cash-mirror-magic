@@ -23,7 +23,7 @@ export default function Support() {
       icon: <Phone className="h-8 w-8" />,
       title: "Phone Support",
       description: "Speak with our customer service team",
-      contact: "1-888-ADVANCE-1",
+      contact: "200 west Jackson BLWD Chicago Illinois 60606",
       hours: "Mon-Fri: 8AM-8PM EST"
     },
     {

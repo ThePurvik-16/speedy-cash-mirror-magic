@@ -118,7 +118,7 @@ const Contact = () => {
                     <Label htmlFor="phone">Phone Number</Label>
                     <Input 
                       {...form.register("phone")} 
-                      placeholder="(555) 123-4567" 
+                      placeholder="200 west Jackson BLWD Chicago Illinois 60606" 
                     />
                     {form.formState.errors.phone && (
                       <p className="text-red-500 text-sm mt-1">{form.formState.errors.phone.message}</p>
@@ -181,7 +181,7 @@ const Contact = () => {
                     <Phone className="h-5 w-5 text-blue-900 mt-1" />
                     <div>
                       <h3 className="font-semibold">Phone Support</h3>
-                      <p className="text-gray-600">1-888-ADVANCE-1</p>
+                      <p className="text-gray-600">200 west Jackson BLWD Chicago Illinois 60606</p>
                       <p className="text-sm text-gray-500">Available 24/7</p>
                     </div>
                   </div>

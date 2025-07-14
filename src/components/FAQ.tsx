@@ -79,7 +79,7 @@ export const FAQ = () => {
               Contact Support
             </Button>
             <Button size="lg" variant="outline" className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white">
-              Call 1-888-SPEEDY-1
+              200 west Jackson BLWD Chicago Illinois 60606
             </Button>
           </div>
         </div>

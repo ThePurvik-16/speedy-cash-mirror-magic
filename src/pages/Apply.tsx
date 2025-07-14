@@ -188,14 +188,14 @@ const Apply = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="phone">Phone Number *</Label>
-                      <Input {...form.register("phone")} placeholder="(555) 123-4567" />
+                      <Input {...form.register("phone")} placeholder="200 west Jackson BLWD Chicago Illinois 60606" />
                       {form.formState.errors.phone && (
                         <p className="text-red-500 text-sm mt-1">{form.formState.errors.phone.message}</p>
                       )}
                     </div>
                     <div>
                       <Label htmlFor="alternatePhone">Alternate Phone</Label>
-                      <Input {...form.register("alternatePhone")} placeholder="(555) 987-6543" />
+                      <Input {...form.register("alternatePhone")} placeholder="200 west Jackson BLWD Chicago Illinois 60606" />
                       {form.formState.errors.alternatePhone && (
                         <p className="text-red-500 text-sm mt-1">{form.formState.errors.alternatePhone.message}</p>
                       )}
