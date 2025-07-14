@@ -30,7 +30,7 @@ export default function Support() {
       icon: <Mail className="h-8 w-8" />,
       title: "Email Support", 
       description: "Send us your questions via email",
-      contact: "support@advanceamerica.com",
+      contact: "Cashadvancesince@gmail.com",
       hours: "Response within 24 hours"
     },
     {

@@ -115,7 +115,7 @@ export const Footer = () => {
               <Mail className="h-5 w-5 mr-3 text-orange-400" />
               <div>
                 <div className="font-semibold">Email Support</div>
-                <div className="text-blue-100">support@advanceamerica.com</div>
+                <div className="text-blue-100">Cashadvancesince@gmail.com</div>
               </div>
             </div>
           </div>

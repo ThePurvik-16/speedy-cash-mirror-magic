@@ -326,7 +326,7 @@ const LoanDetails = () => {
                       <span className="font-medium">Address:</span> 200 west Jackson BLWD Chicago Illinois 60606
                     </div>
                     <div className="text-sm">
-                      <span className="font-medium">Email:</span> support@advanceamerica.com
+                      <span className="font-medium">Email:</span> Cashadvancesince@gmail.com
                     </div>
                   </div>
                 </CardContent>
