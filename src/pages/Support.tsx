@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { PageLoader } from "@/components/ui/loader";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Phone, Mail, MessageCircle, FileText, CreditCard, Shield } from "lucide-react";
+import { MapPin, Mail, MessageCircle, FileText, CreditCard, Shield } from "lucide-react";
 
 export default function Support() {
   const [loading, setLoading] = useState(true);
@@ -20,9 +20,9 @@ export default function Support() {
 
   const supportOptions = [
     {
-      icon: <Phone className="h-8 w-8" />,
-      title: "Phone Support",
-      description: "Speak with our customer service team",
+      icon: <MapPin className="h-8 w-8" />,
+      title: "Address Support",
+      description: "Visit our location for in-person assistance",
       contact: "200 west Jackson BLWD Chicago Illinois 60606",
       hours: "Mon-Fri: 8AM-8PM EST"
     },

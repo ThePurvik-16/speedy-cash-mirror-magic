@@ -1,5 +1,5 @@
 
-import { Phone, Mail } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -105,9 +105,9 @@ export const Footer = () => {
         <div className="border-t border-blue-800 mt-12 pt-8">
           <div className="grid md:grid-cols-2 gap-6">
             <div className="flex items-center">
-              <Phone className="h-5 w-5 mr-3 text-orange-400" />
+              <MapPin className="h-5 w-5 mr-3 text-orange-400" />
               <div>
-                <div className="font-semibold">Customer Service</div>
+                <div className="font-semibold">Address</div>
                 <div className="text-blue-100">200 west Jackson BLWD Chicago Illinois 60606</div>
               </div>
             </div>

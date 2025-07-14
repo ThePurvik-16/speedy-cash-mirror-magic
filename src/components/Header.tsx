@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Menu, X, Phone, MapPin } from "lucide-react";
+import { Menu, X, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 
@@ -32,7 +32,7 @@ export const Header = () => {
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center space-x-4">
             <div className="flex items-center">
-              <Phone className="h-4 w-4 mr-1" />
+              <MapPin className="h-4 w-4 mr-1" />
               <span>200 west Jackson BLWD Chicago Illinois 60606</span>
             </div>
           </div>

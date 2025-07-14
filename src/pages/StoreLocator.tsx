@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { PageLoader } from "@/components/ui/loader";
-import { MapPin, Phone, Clock, Navigation, Search } from "lucide-react";
+import { MapPin, Clock, Navigation, Search } from "lucide-react";
 
 const StoreLocator = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -153,7 +153,7 @@ const StoreLocator = () => {
                           <span>{store.address}</span>
                         </div>
                         <div className="flex items-center text-gray-600 mb-2">
-                          <Phone className="h-4 w-4 mr-2" />
+                          <MapPin className="h-4 w-4 mr-2" />
                           <span>{store.phone}</span>
                         </div>
                       </div>
@@ -196,8 +196,8 @@ const StoreLocator = () => {
                         Get Directions
                       </Button>
                       <Button size="sm" variant="outline">
-                        <Phone className="h-4 w-4 mr-1" />
-                        Call Store
+                        <MapPin className="h-4 w-4 mr-1" />
+                        Visit Store
                       </Button>
                     </div>
                   </CardContent>

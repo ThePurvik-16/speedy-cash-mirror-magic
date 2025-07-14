@@ -12,7 +12,7 @@ import { Footer } from "@/components/Footer";
 import { PageLoader } from "@/components/ui/loader";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
+import { MapPin, Mail, Clock, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const contactSchema = z.object({
@@ -178,9 +178,9 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-start space-x-3">
-                    <Phone className="h-5 w-5 text-blue-900 mt-1" />
+                    <MapPin className="h-5 w-5 text-blue-900 mt-1" />
                     <div>
-                      <h3 className="font-semibold">Phone Support</h3>
+                      <h3 className="font-semibold">Address</h3>
                       <p className="text-gray-600">200 west Jackson BLWD Chicago Illinois 60606</p>
                       <p className="text-sm text-gray-500">Available 24/7</p>
                     </div>
