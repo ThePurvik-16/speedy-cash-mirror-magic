@@ -337,7 +337,7 @@ const Apply = () => {
                       onCheckedChange={(checked) => form.setValue("agreeTerms", checked as boolean)}
                     />
                     <Label htmlFor="agreeTerms" className="text-sm">
-                      I agree to the <a href="#" className="text-blue-600 hover:underline">Terms of Service</a> and <a href="#" className="text-blue-600 hover:underline">Privacy Policy</a> *
+                      I agree to the <a href="/legal" className="text-blue-600 hover:underline">Terms of Service</a> and <a href="/legal" className="text-blue-600 hover:underline">Privacy Policy</a> *
                     </Label>
                   </div>
                   {form.formState.errors.agreeTerms && (

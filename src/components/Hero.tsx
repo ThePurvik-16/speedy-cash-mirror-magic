@@ -17,7 +17,7 @@ export const Hero = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.loanAmount || !formData.state || !formData.zipCode) {
       toast({
         title: "Please fill out all fields",
@@ -48,6 +48,59 @@ export const Hero = () => {
     });
   };
 
+  const states = [
+    { name: "Alabama", abbreviation: "AL" },
+    { name: "Alaska", abbreviation: "AK" },
+    { name: "Arizona", abbreviation: "AZ" },
+    { name: "Arkansas", abbreviation: "AR" },
+    { name: "California", abbreviation: "CA" },
+    { name: "Colorado", abbreviation: "CO" },
+    { name: "Connecticut", abbreviation: "CT" },
+    { name: "Delaware", abbreviation: "DE" },
+    { name: "Florida", abbreviation: "FL" },
+    { name: "Georgia", abbreviation: "GA" },
+    { name: "Hawaii", abbreviation: "HI" },
+    { name: "Idaho", abbreviation: "ID" },
+    { name: "Illinois", abbreviation: "IL" },
+    { name: "Indiana", abbreviation: "IN" },
+    { name: "Iowa", abbreviation: "IA" },
+    { name: "Kansas", abbreviation: "KS" },
+    { name: "Kentucky", abbreviation: "KY" },
+    { name: "Louisiana", abbreviation: "LA" },
+    { name: "Maine", abbreviation: "ME" },
+    { name: "Maryland", abbreviation: "MD" },
+    { name: "Massachusetts", abbreviation: "MA" },
+    { name: "Michigan", abbreviation: "MI" },
+    { name: "Minnesota", abbreviation: "MN" },
+    { name: "Mississippi", abbreviation: "MS" },
+    { name: "Missouri", abbreviation: "MO" },
+    { name: "Montana", abbreviation: "MT" },
+    { name: "Nebraska", abbreviation: "NE" },
+    { name: "Nevada", abbreviation: "NV" },
+    { name: "New Hampshire", abbreviation: "NH" },
+    { name: "New Jersey", abbreviation: "NJ" },
+    { name: "New Mexico", abbreviation: "NM" },
+    { name: "New York", abbreviation: "NY" },
+    { name: "North Carolina", abbreviation: "NC" },
+    { name: "North Dakota", abbreviation: "ND" },
+    { name: "Ohio", abbreviation: "OH" },
+    { name: "Oklahoma", abbreviation: "OK" },
+    { name: "Oregon", abbreviation: "OR" },
+    { name: "Pennsylvania", abbreviation: "PA" },
+    { name: "Rhode Island", abbreviation: "RI" },
+    { name: "South Carolina", abbreviation: "SC" },
+    { name: "South Dakota", abbreviation: "SD" },
+    { name: "Tennessee", abbreviation: "TN" },
+    { name: "Texas", abbreviation: "TX" },
+    { name: "Utah", abbreviation: "UT" },
+    { name: "Vermont", abbreviation: "VT" },
+    { name: "Virginia", abbreviation: "VA" },
+    { name: "Washington", abbreviation: "WA" },
+    { name: "West Virginia", abbreviation: "WV" },
+    { name: "Wisconsin", abbreviation: "WI" },
+    { name: "Wyoming", abbreviation: "WY" },
+  ];
+
   return (
     <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white py-16 lg:py-24">
       <div className="container mx-auto px-4">
@@ -60,10 +113,10 @@ export const Hero = () => {
               <span className="text-orange-400">Fast & Easy</span>
             </h1>
             <p className="text-xl mb-8 text-blue-100">
-              Need money quickly? Get up to $15,000 with our fast and simple online application process. 
+              Need money quickly? Get up to $15,000 with our fast and simple online application process.
               No hidden fees, quick approval, and funds as soon as today.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-slide-up">
               <Link to="/apply">
                 <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 text-lg font-semibold hover-glow">
@@ -71,7 +124,7 @@ export const Hero = () => {
                 </Button>
               </Link>
               <Link to="/about">
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 text-lg font-semibold">
+                <Button size="lg" variant="outline" className="border-white text-blue-900  hover:bg-white hover:text-blue-900 px-8 py-4 text-lg font-semibold">
                   Learn More
                 </Button>
               </Link>
@@ -107,7 +160,7 @@ export const Hero = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium mb-2">Loan Amount Needed</label>
-                  <select 
+                  <select
                     name="loanAmount"
                     value={formData.loanAmount}
                     onChange={handleChange}
@@ -139,7 +192,7 @@ export const Hero = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Your State</label>
-                  <select 
+                  <select
                     name="state"
                     value={formData.state}
                     onChange={handleChange}
@@ -147,11 +200,11 @@ export const Hero = () => {
                     required
                   >
                     <option value="">Select Your State</option>
-                    <option value="CA">California</option>
-                    <option value="TX">Texas</option>
-                    <option value="FL">Florida</option>
-                    <option value="NY">New York</option>
-                    <option value="IL">Illinois</option>
+                    {states.map((state) => (
+                      <option key={state.abbreviation} value={state.abbreviation}>
+                        {state.name}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div>
